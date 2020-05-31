@@ -3,14 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsListComponent,
+    TopBarComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', component: ProductsListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
