@@ -1,5 +1,5 @@
 <h2>Products</h2>
-
+{{conversionDecryptOutput}}
 <div *ngFor="let product of products; index as productId">
 
   <h3>
@@ -15,5 +15,7 @@
   <button (click)="share()">
     Share
   </button>
-
+  <app-product-alerts
+  [product]="product" (notify)="onNotify()">
+</app-product-alerts>
 </div>
